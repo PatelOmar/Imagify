@@ -18,7 +18,8 @@ Image Repository Project
     **localhost:3000/**
     
 # Design Notes:
-## Firebase
+### Technologies used:
+**React.js, Node js, Firebase**
       
 # Collaborators:
 Omar Patel
