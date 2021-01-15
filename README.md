@@ -10,7 +10,10 @@ Image Repository Project
 
   To Start Server:
     npm start
-
+    
+  Create a firebase project:
+    Add Firebase credentials to src/firebase/firestore.js
+  
   To Visit App:
     localhost:3000/
 
