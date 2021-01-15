@@ -5,16 +5,16 @@ Image Repository Project
   https://imagify-f5874.web.app/
   
 # To run the app with React:
-  Installation:
+### Installation:
     **npm install**
 
-  To Start Server:
+###  To Start Server:
     **npm start**
     
-  Create a firebase project:
+### Create a firebase project:
     **Add Firebase credentials to src/firebase/firestore.js**
   
-  To Visit App:
+### To Visit App:
     **localhost:3000/**
     
 # Design Notes:
