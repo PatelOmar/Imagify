@@ -6,18 +6,19 @@ Image Repository Project
   
 # To run the app with React:
   Installation:
-    npm install
+    **npm install**
 
   To Start Server:
-    npm start
+    **npm start**
     
   Create a firebase project:
-    Add Firebase credentials to src/firebase/firestore.js
+    **Add Firebase credentials to src/firebase/firestore.js**
   
   To Visit App:
-    localhost:3000/
+    **localhost:3000/**
     
 # Design Notes:
 ## Firebase
+   
 # Collaborators:
 Omar Patel
