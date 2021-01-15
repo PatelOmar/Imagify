@@ -19,6 +19,6 @@ Image Repository Project
     
 # Design Notes:
 ## Firebase
-   
+      
 # Collaborators:
 Omar Patel
