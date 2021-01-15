@@ -18,6 +18,6 @@ Image Repository Project
     localhost:3000/
     
 # Design Notes:
-  ##Firebase
+  # Firebase
 # Collaborators:
 Omar Patel
