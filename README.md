@@ -16,6 +16,8 @@ Image Repository Project
   
   To Visit App:
     localhost:3000/
-
+    
+# Design Notes:
+  ##Firebase
 # Collaborators:
 Omar Patel
