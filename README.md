@@ -1,2 +1,2 @@
-# Shopify_Challenge_Imagify
-Image Repository
+# Imagify
+Image Repository Project
