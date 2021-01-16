@@ -12,10 +12,11 @@ import Dropdown from 'react-bootstrap/Dropdown';
 // import SignIn from "./SignIn";
 
 export default function Image(props) {
+
     return (
         <section className="Image-Card">
             <img src={props.url} height={300} width={300}/>
-            <Permissions permission={props.permission}/>
+            {!props.publicPage && <Permissions permission={props.permission}/>}
         </section> 
     )
 }

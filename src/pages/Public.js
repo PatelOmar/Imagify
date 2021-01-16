@@ -13,7 +13,7 @@ export default function PublicGallery() {
     return (
     <body  className="App-body">
         {/* {user ? <Gallery querySearchType={"publicPermission"} querySearchValue={true}/> : <SignIn /> }  */}
-       <Gallery querySearchType={"publicPermission"} querySearchValue={true} title={"Public Gallery"}/>
+       <Gallery publicPage={true} querySearchType={"publicPermission"} querySearchValue={true} title={"Public Gallery"}/>
     </body>
     );
 }
