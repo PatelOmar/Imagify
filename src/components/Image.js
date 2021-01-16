@@ -16,7 +16,7 @@ export default function Image(props) {
     return (
         <section className="Image-Card">
             <img src={props.url} height={300} width={300}/>
-            {!props.publicPage && <Permissions permission={props.permission}/>}
+            {!props.publicPage && <Permissions  id={props.id} permission={props.permission}/>}
         </section> 
     )
 }

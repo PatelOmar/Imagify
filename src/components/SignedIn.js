@@ -61,7 +61,8 @@ export default function SignedIn() {
         // console.log(compressedImage);
         setClick(true);
         for (let i = 0; i < compressedImages.length; i++){
-            const uploadTask = await FirestoreService.storage.ref(`images/${compressedImages[i].name}`).put(compressedImages[i]);
+            let fileName = FirestoreService.auth.currentUser.uid +"-"+compressedImages[i].name;
+            const uploadTask = await FirestoreService.storage.ref(`images/${fileName}`).put(compressedImages[i]);
             console.log("Uploaded");
             uploadTask.task.on("state_changed", 
                             snapshot => {}, 
@@ -69,7 +70,7 @@ export default function SignedIn() {
                                 console.log(error);
                             },
                             () =>  {
-                                FirestoreService.storage.ref("images").child(compressedImages[i].name).getDownloadURL().then(async (url) => {
+                                FirestoreService.storage.ref("images").child(fileName).getDownloadURL().then(async (url) => {
                                     // console.log(url);
                                     
                                     let uploaded = await FirestoreService.uploadImage(url);
