@@ -21,7 +21,7 @@ Image Repository Project
   **localhost:3000/**
     
 # Design Notes: 
-## This project was focused to solve the ADD image(s) to the repository idea of the challenge
+## This project was focused on solving the ADD image(s) to the repository idea of the challenge
 ## Technologies used:
   **React.js, Node js, Firebase**
 ## React.js
