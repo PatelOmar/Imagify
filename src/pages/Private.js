@@ -12,7 +12,7 @@ export default function PrivateGallery() {
     return (
     <body  className="App-body">
         {/* {user ? <Gallery querySearchType={"publicPermission"} querySearchValue={true}/> : <SignIn /> }  */}
-        {user ? <Gallery querySearchType={"uid"} querySearchValue={FirestoreService.auth.currentUser.uid}/> : <SignIn /> } 
+        {user ? <Gallery querySearchType={"uid"} querySearchValue={FirestoreService.auth.currentUser.uid} title={"Personal Gallery"}/> : <SignIn /> } 
     </body>
     );
 }

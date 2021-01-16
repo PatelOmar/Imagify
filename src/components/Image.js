@@ -38,7 +38,7 @@ export default function Image(props) {
         <section className="Image-Card">
             <img src={props.url} height={300} width={300}/>
             <section>
-                <h3>Permissions:</h3>
+                <h3 className="Image-Perm-Header">Permissions:</h3>
                 <Dropdown onSelect={handleSelect}>
                     <Dropdown.Toggle disabled={clickDisabled}>
                         {permissionValue}

@@ -59,7 +59,39 @@
   font-size: calc(10px + 2vmin);
   color: white;
 } */
-
+.HeaderBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.LoginInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.Feed {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.Image-Perm-Header {
+  color: #2f4f4f;
+}
+.Gallery-Heading {
+  color: #2f4f4f;
+  position: relative;
+  text-align: center;
+  top: 0%;
+}
+.Spacing {
+  margin: 4px;
+}
+.Image-Card {
+  background-color: white;
+  padding: 10px;
+  margin: 4px;
+}
 .App-link {
   color: #61dafb;
 }

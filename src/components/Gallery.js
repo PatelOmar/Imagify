@@ -18,7 +18,8 @@ export default function Gallery(props) {
 
     return (
         <div>
-           {!loading && <Feed gallery={gallery}/> }    
+            <h1 className="Gallery-Heading">{props.title}</h1> 
+           {!loading && <Feed gallery={gallery} /> }    
         </div> 
     )
 }
@@ -41,8 +42,7 @@ function Feed(props){
         return <Image url={image.url} permission={permission} id={image.id}/>});
 
     return (
-        <div>
-           <h1>PRIVATE GALLERY</h1> 
+        <div className="Feed">
            {Feed}
         </div> 
     )
