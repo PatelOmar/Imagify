@@ -19,7 +19,7 @@ export default function Gallery(props) {
     return (
         <div>
             <h1 className="Gallery-Heading">{props.title}</h1> 
-           {!loading && <Feed gallery={gallery} /> }    
+           {!loading && <Feed gallery={gallery} publicPage={props.publicPage}/> }    
         </div> 
     )
 }
@@ -27,19 +27,13 @@ export default function Gallery(props) {
 function Feed(props){
     let history = useHistory();
     console.log(props.gallery);
-    const Images = props.gallery;
-   
-    useEffect(() => {
-        if(!Images[0].publicPermission){
-            console.log("private")
-        }
-    }, [])   
+    const Images = props.gallery; 
     const Feed = Images.map((image) => {
         let permission = "Private";
         if(image.publicPermission){
             permission = "Public";
         }
-        return <Image url={image.url} permission={permission} id={image.id}/>});
+        return <Image url={image.url} permission={permission} id={image.id} publicPage={props.publicPage}/>});
 
     return (
         <div className="Feed">

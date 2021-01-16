@@ -13,7 +13,7 @@ export default function SignedIn() {
     const fileInput = useRef(null);
 
     const handleChange = async(e) =>{
-        setClick(!click);
+        setClick(true);
         const options = {
             maxSizeMB: 1,
             maxWidthOrHeight: 1920,
@@ -29,9 +29,9 @@ export default function SignedIn() {
                     const compressedFile = await imageCompression(e.target.files[i], options);
                     tempCompressedImages.push(compressedFile);
                     tempImages.push(e.target.files[i]);
-                    } catch (error) {
+                } catch (error) {
                     console.log(error);
-                    }
+                }
             }
         }
         try{
@@ -41,7 +41,7 @@ export default function SignedIn() {
             console.log(error);
         }
         console.log("Files ready for upload!");
-        setClick(!click);
+        setClick(false);
         // if(e.target.files[0]){
         //     try {
         //         console.log("Started");
@@ -59,7 +59,7 @@ export default function SignedIn() {
     const handleUpload = async() =>{
         // console.log(image);
         // console.log(compressedImage);
-        setClick(!click);
+        setClick(true);
         for (let i = 0; i < compressedImages.length; i++){
             const uploadTask = await FirestoreService.storage.ref(`images/${compressedImages[i].name}`).put(compressedImages[i]);
             console.log("Uploaded");
@@ -80,7 +80,7 @@ export default function SignedIn() {
         console.log("Uploaded!");
         setCompressedImages([]);
         setImages([]);  
-        setClick(!click);       
+        setClick(false);       
     }
     function handleClick() {
         fileInput.current.click();
@@ -88,10 +88,10 @@ export default function SignedIn() {
     return (
         <div>
             <div className="Page-home-buttons">
-                <input style= {{display: "none"}} type="file" onChange={handleChange} ref={fileInput}/>
-                <Button onClick={handleClick} variant="outline-info"  size="lg">Add Files</Button> 
+                <input style= {{display: "none"}} multiple type="file" onChange={handleChange} ref={fileInput}/>
+                <Button onClick={handleClick} variant="outline-info" disabled={click} size="lg">Add Files</Button> 
                 <span className="Spacer"/>
-                <Button variant="outline-info"  size="lg" disabled={false} onClick={handleUpload}>Upload</Button> 
+                <Button variant="outline-info"  size="lg" disabled={click} onClick={handleUpload}>Upload</Button> 
             </div> 
         </div> 
     )

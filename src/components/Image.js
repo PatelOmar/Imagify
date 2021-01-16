@@ -12,6 +12,14 @@ import Dropdown from 'react-bootstrap/Dropdown';
 // import SignIn from "./SignIn";
 
 export default function Image(props) {
+    return (
+        <section className="Image-Card">
+            <img src={props.url} height={300} width={300}/>
+            <Permissions permission={props.permission}/>
+        </section> 
+    )
+}
+function Permissions(props){
     const [clickDisabled, setClickDisabled] = useState(false);
     const [permissionValue, setPermissionValue] = useState(props.permission);
     const handleSelect = async(eventKey) => {
@@ -34,23 +42,21 @@ export default function Image(props) {
         }
         setTimeout(function(){ setClickDisabled(false); }, 5000);
     }
-    return (
-        <section className="Image-Card">
-            <img src={props.url} height={300} width={300}/>
-            <section>
-                <h3 className="Image-Perm-Header">Permissions:</h3>
-                <Dropdown onSelect={handleSelect}>
-                    <Dropdown.Toggle disabled={clickDisabled}>
-                        {permissionValue}
-                    </Dropdown.Toggle>
+    return(
+    <section>
+        <h3 className="Image-Perm-Header">Permissions:</h3>
+        <Dropdown onSelect={handleSelect}>
+            <Dropdown.Toggle disabled={clickDisabled}>
+                {permissionValue}
+            </Dropdown.Toggle>
 
-                    <Dropdown.Menu>
-                        <Dropdown.Item eventKey="true" >Public</Dropdown.Item>
-                        <Dropdown.Item eventKey="false" >Private</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-            </section>
-        </section> 
-    )
+            <Dropdown.Menu>
+                <Dropdown.Item eventKey="true" >Public</Dropdown.Item>
+                <Dropdown.Item eventKey="false" >Private</Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
+    </section>);
+
 }
+
 
