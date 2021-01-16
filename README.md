@@ -1,8 +1,11 @@
 # Imagify
 Image Repository Project
 
+
 # Application is hosted at: 
   https://imagify-f5874.web.app/
+
+### Note: Not Configured For Mobile
   
 # To run the app with React:
 ### Installation:
@@ -17,7 +20,8 @@ Image Repository Project
 ### To Visit App:
   **localhost:3000/**
     
-# Design Notes:
+# Design Notes: 
+## This project was focused to solve the ADD image(s) to the repository idea of the challenge
 ## Technologies used:
   **React.js, Node js, Firebase**
 ## React.js
