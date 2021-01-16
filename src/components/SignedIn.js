@@ -6,7 +6,6 @@ import Form from 'react-bootstrap/Form';
 import imageCompression from 'browser-image-compression';
 
 export default function SignedIn() {
-    let history = useHistory();
     const [images,setImages] = useState([]);
     const [compressedImages,setCompressedImages] = useState([]);
     const [click,setClick] = useState(false);
@@ -42,18 +41,6 @@ export default function SignedIn() {
         }
         console.log("Files ready for upload!");
         setClick(false);
-        // if(e.target.files[0]){
-        //     try {
-        //         console.log("Started");
-        //         const compressedFile = await imageCompression(e.target.files[0], options);
-        //         console.log("worked");
-        //         setCompressedImage(compressedFile);
-        //         setImage(e.target.files[0]);
-        //         // await uploadToServer(compressedFile); // write your own logic
-        //       } catch (error) {
-        //         console.log(error);
-        //       }
-        // }
         
     }
     const handleUpload = async() =>{
@@ -62,6 +49,7 @@ export default function SignedIn() {
         setClick(true);
         for (let i = 0; i < compressedImages.length; i++){
             let fileName = FirestoreService.auth.currentUser.uid +"-"+compressedImages[i].name;
+            console.log(fileName);
             const uploadTask = await FirestoreService.storage.ref(`images/${fileName}`).put(compressedImages[i]);
             console.log("Uploaded");
             uploadTask.task.on("state_changed", 

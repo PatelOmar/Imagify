@@ -1,15 +1,8 @@
 import React, { useState, useRef, useEffect} from "react";
-import Button from 'react-bootstrap/Button'
-import { useHistory } from "react-router-dom";
 import * as FirestoreService from '../firebase/firestore';
-import Form from 'react-bootstrap/Form';
-import imageCompression from 'browser-image-compression';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-// import SignIn from "./SignIn";
+
 
 export default function Image(props) {
 

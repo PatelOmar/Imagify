@@ -11,7 +11,6 @@ export default function PrivateGallery() {
     const [user] = useAuthState(FirestoreService.auth);
     return (
     <body  className="App-body">
-        {/* {user ? <Gallery querySearchType={"publicPermission"} querySearchValue={true}/> : <SignIn /> }  */}
         {user ? <Gallery publicPage={false} querySearchType={"uid"} querySearchValue={FirestoreService.auth.currentUser.uid} title={"Personal Gallery"} /> : <SignIn /> } 
     </body>
     );

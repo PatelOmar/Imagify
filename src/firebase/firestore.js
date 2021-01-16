@@ -44,7 +44,6 @@ export const uploadImage = async (url) => {
 
 export const updateImagePermission = async (id, permission) => {
     try{
-        console.log(permission);
         await db.collection('images').doc(id).update({
             publicPermission: permission,
         });
